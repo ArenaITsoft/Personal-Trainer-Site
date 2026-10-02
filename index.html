@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coach Marcus Apex | Elite Personal Training & Online Coaching</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#FF6B00',
+                            neon: '#22C55E',
+                            dark: '#0B0F17',
+                            card: '#151C28',
+                            border: '#263147'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Custom Visual Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B0F17;
+            color: #F3F4F6;
+        }
+
+        .glass-header {
+            background: rgba(11, 15, 23, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(21, 28, 40, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(255, 107, 0, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px -10px rgba(255, 107, 0, 0.25);
+        }
+
+        .text-gradient-orange {
+            background: linear-gradient(135deg, #FF6B00 0%, #FF9E00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-neon {
+            background: linear-gradient(135deg, #22C55E 0%, #4ADE80 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-orange {
+            background: linear-gradient(135deg, #FF6B00 0%, #E05600 100%);
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .btn-orange:hover {
+            box-shadow: 0 0 20px rgba(255, 107, 0, 0.5);
+            transform: scale(1.02);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .btn-whatsapp:hover {
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+            transform: scale(1.02);
+        }
+
+        .pulse-slow {
+            animation: pulse 3s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.05); }
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0B0F17;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #263147;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #FF6B00;
+        }
+    </style>
+</head>
+<body class="custom-scrollbar">
+
+    <!-- GLASSMORPHISM NAVIGATION HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-header px-4 lg:px-8 py-3.5">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-orange to-amber-500 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-orange-500/20 group-hover:scale-105 transition">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <div>
+                    <span class="font-black text-xl tracking-wider text-white">MARCUS<span class="text-brand-orange">APEX</span></span>
+                    <span class="block text-[10px] text-gray-400 font-medium tracking-widest uppercase">Personal Trainer</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-8 text-xs font-bold uppercase tracking-wider text-gray-300">
+                <a href="#home" class="hover:text-brand-orange transition">Home</a>
+                <a href="#about" class="hover:text-brand-orange transition">About</a>
+                <a href="#programs" class="hover:text-brand-orange transition">Programs</a>
+                <a href="#transformations" class="hover:text-brand-orange transition">Transformations</a>
+                <a href="#testimonials" class="hover:text-brand-orange transition">Reviews</a>
+                <a href="#booking" class="hover:text-brand-orange transition">Book Session</a>
+                <a href="#contact" class="hover:text-brand-orange transition">Contact</a>
+            </nav>
+
+            <!-- Quick Action Header CTAs -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="https://wa.me/?text=Hi%20Coach%20Marcus,%20I%20am%20interested%20in%20your%20training%20programs." target="_blank" class="btn-whatsapp text-xs font-bold px-3.5 py-2.5 rounded-xl flex items-center gap-2 shadow">
+                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <button onclick="openBookingModal()" class="btn-orange text-xs font-extrabold px-4 py-2.5 rounded-xl flex items-center gap-2 shadow-lg">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Free Consultation</span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button onclick="toggleMobileNav()" class="lg:hidden text-gray-300 hover:text-white text-2xl p-2">
+                <i class="fa-solid fa-bars-staggered" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobile-nav" class="hidden lg:hidden pt-4 pb-6 px-2 space-y-3 text-center border-t border-gray-800/80 mt-3">
+            <a href="#home" onclick="toggleMobileNav()" class="block py-2 text-sm font-bold text-gray-300 hover:text-brand-orange">Home</a>
+            <a href="#about" onclick="toggleMobileNav()" class="block py-2 text-sm font-bold text-gray-300 hover:text-brand-orange">About Trainer</a>
+            <a href="#programs" onclick="toggleMobileNav()" class="block py-2 text-sm font-bold text-gray-300 hover:text-brand-orange">Programs</a>
+            <a href="#transformations" onclick="toggleMobileNav()" class="block py-2 text-sm font-bold text-gray-300 hover:text-brand-orange">Transformations</a>
+            <a href="#testimonials" onclick="toggleMobileNav()" class="block py-2 text-sm font-bold text-gray-300 hover:text-brand-orange">Client Reviews</a>
+            <a href="#booking" onclick="toggleMobileNav()" class="block py-2 text-sm font-bold text-gray-300 hover:text-brand-orange">Book Session</a>
+            <a href="#contact" onclick="toggleMobileNav()" class="block py-2 text-sm font-bold text-gray-300 hover:text-brand-orange">Contact</a>
+            
+            <div class="flex justify-center gap-3 pt-3">
+                <a href="tel:+18005550199" class="glass-card text-xs font-bold px-4 py-2.5 rounded-xl text-gray-200">
+                    <i class="fa-solid fa-phone mr-1"></i> Call Now
+                </a>
+                <button onclick="openBookingModal(); toggleMobileNav();" class="btn-orange text-xs font-extrabold px-4 py-2.5 rounded-xl">
+                    Free Consultation
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative min-h-screen pt-32 pb-20 px-4 flex items-center justify-center overflow-hidden">
+        <!-- Background Ambient Lighting & Grid -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1600&auto=format&fit=crop" alt="Gym Dynamic" class="w-full h-full object-cover object-center opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0B0F17] via-[#0B0F17]/85 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0B0F17] via-transparent to-[#0B0F17]"></div>
+            
+            <!-- Glow Orbs -->
+            <div class="absolute top-1/4 left-10 w-96 h-96 bg-brand-orange/15 rounded-full blur-3xl pulse-slow"></div>
+            <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pulse-slow"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Hero Text -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-950/60 border border-brand-orange/40 text-brand-orange text-xs font-bold tracking-wider uppercase">
+                    <span class="w-2.5 h-2.5 rounded-full bg-brand-orange animate-ping"></span>
+                    Accepting New Clients For 2026 Season
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl xl:text-7xl font-black text-white leading-tight tracking-tight">
+                    Transform Your <span class="text-gradient-orange">Body & Mind</span> With Coach Marcus
+                </h1>
+
+                <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                    Stop guessing your workouts and diets. Get scientifically engineered 1-on-1 personal training, tailored nutrition strategies, and daily accountability to reach peak physical performance.
+                </p>
+
+                <!-- Hero CTAs -->
+                <div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-2">
+                    <button onclick="openBookingModal()" class="btn-orange font-extrabold text-sm px-8 py-4 rounded-xl flex items-center gap-3 shadow-xl">
+                        <i class="fa-solid fa-calendar-check text-lg"></i>
+                        <span>Book Free Consultation</span>
+                    </button>
+                    <a href="#programs" class="glass-card hover:border-gray-500 text-white font-bold text-sm px-7 py-4 rounded-xl flex items-center gap-2">
+                        <span>Explore Programs</span>
+                        <i class="fa-solid fa-arrow-down text-brand-orange"></i>
+                    </a>
+                </div>
+
+                <!-- Live Trust Stats Grid -->
+                <div class="grid grid-cols-3 gap-4 pt-6 max-w-lg mx-auto lg:mx-0 text-center border-t border-gray-800/80">
+                    <div class="glass-card p-3.5 rounded-2xl">
+                        <span class="text-2xl sm:text-3xl font-black text-white block" id="stat-clients">1,000+</span>
+                        <span class="text-[11px] text-gray-400 uppercase font-semibold">Clients Transformed</span>
+                    </div>
+                    <div class="glass-card p-3.5 rounded-2xl">
+                        <span class="text-2xl sm:text-3xl font-black text-gradient-orange block">12+ Yrs</span>
+                        <span class="text-[11px] text-gray-400 uppercase font-semibold">Pro Experience</span>
+                    </div>
+                    <div class="glass-card p-3.5 rounded-2xl">
+                        <span class="text-2xl sm:text-3xl font-black text-gradient-neon block">98%</span>
+                        <span class="text-[11px] text-gray-400 uppercase font-semibold">Success Rate</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Hero Imagery Badge -->
+            <div class="lg:col-span-5 relative">
+                <div class="glass-card p-4 sm:p-5 rounded-3xl border border-gray-700 shadow-2xl relative overflow-hidden group">
+                    <div class="relative h-[420px] sm:h-[480px] rounded-2xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800&auto=format&fit=crop" alt="Coach Marcus" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B0F17] via-transparent to-transparent"></div>
+                        
+                        <!-- Trainer Floating Card overlay -->
+                        <div class="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md p-4 rounded-2xl border border-gray-700">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="bg-brand-orange text-white font-extrabold text-[10px] px-2 py-0.5 rounded tracking-widest uppercase">HEAD COACH</span>
+                                    <h3 class="text-xl font-black text-white mt-0.5">Marcus Apex</h3>
+                                    <p class="text-xs text-gray-300">ISSA Master Fitness & Nutrition Specialist</p>
+                                </div>
+                                <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-award"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT & CERTIFICATIONS SECTION -->
+    <section id="about" class="py-20 px-4 bg-slate-950/60 border-y border-gray-800/80">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Info Graphic -->
+            <div class="lg:col-span-5 space-y-6">
+                <div class="relative rounded-3xl overflow-hidden glass-card p-3">
+                    <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=800&auto=format&fit=crop" alt="Trainer Coaching" class="w-full h-96 object-cover rounded-2xl">
+                    <div class="absolute top-6 left-6 bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-xl border border-gray-700 flex items-center gap-2">
+                        <i class="fa-solid fa-star text-amber-400 text-sm"></i>
+                        <span class="text-xs font-bold text-white">4.9/5 Average Rating (320+ Reviews)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Bio Content -->
+            <div class="lg:col-span-7 space-y-6">
+                <div>
+                    <span class="text-brand-orange text-xs font-black tracking-widest uppercase">My Philosophy & Unique Approach</span>
+                    <h2 class="text-3xl sm:text-5xl font-black text-white mt-1">Driven By Science, Focused On Real Sustainable Results</h2>
+                </div>
+
+                <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                    I don't believe in dangerous fad diets, extreme dehydration cuts, or unmaintainable 7-day gym grinds. My training programs are designed around <strong class="text-white">progressive overload strength principles</strong> and flexible macronutrient nutrition that fits your lifestyle.
+                </p>
+
+                <!-- Certification Badges -->
+                <div class="space-y-3 pt-2">
+                    <h4 class="text-xs font-extrabold uppercase tracking-wider text-gray-400">Verified Professional Certifications</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <div class="glass-card p-3.5 rounded-xl flex items-center gap-3">
+                            <i class="fa-solid fa-certificate text-brand-orange text-xl"></i>
+                            <div>
+                                <p class="text-xs font-bold text-white">ISSA Master</p>
+                                <p class="text-[10px] text-gray-400">Trainer Certified</p>
+                            </div>
+                        </div>
+                        <div class="glass-card p-3.5 rounded-xl flex items-center gap-3">
+                            <i class="fa-solid fa-dumbbell text-emerald-400 text-xl"></i>
+                            <div>
+                                <p class="text-xs font-bold text-white">NSCA-CSCS</p>
+                                <p class="text-[10px] text-gray-400">Strength Specialist</p>
+                            </div>
+                        </div>
+                        <div class="glass-card p-3.5 rounded-xl flex items-center gap-3">
+                            <i class="fa-solid fa-apple-whole text-amber-400 text-xl"></i>
+                            <div>
+                                <p class="text-xs font-bold text-white">Precision Nutrition</p>
+                                <p class="text-[10px] text-gray-400">Level 2 Diet Coach</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <button onclick="openBookingModal()" class="btn-orange text-xs font-extrabold px-6 py-3.5 rounded-xl inline-flex items-center gap-2">
+                        <span>Work 1-on-1 With Marcus</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TRAINING PROGRAMS & SERVICES SECTION -->
+    <section id="programs" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <span class="text-brand-orange text-xs font-black tracking-widest uppercase">Tailored Programs</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white">Find Your Exact Training Path</h2>
+                <p class="text-gray-400 text-sm sm:text-base">Choose a program engineered specifically for your body type, fitness level, and personal goals.</p>
+
+                <!-- Program Category Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-2 pt-4" id="program-filters">
+                    <button onclick="filterPrograms('all', this)" class="filter-btn active bg-brand-orange text-white px-5 py-2.5 rounded-xl text-xs font-extrabold transition">All Programs</button>
+                    <button onclick="filterPrograms('in-person', this)" class="filter-btn glass-card text-gray-300 hover:text-white px-5 py-2.5 rounded-xl text-xs font-extrabold transition">In-Person Gym Coaching</button>
+                    <button onclick="filterPrograms('online', this)" class="filter-btn glass-card text-gray-300 hover:text-white px-5 py-2.5 rounded-xl text-xs font-extrabold transition">Online Virtual Coaching</button>
+                    <button onclick="filterPrograms('specialty', this)" class="filter-btn glass-card text-gray-300 hover:text-white px-5 py-2.5 rounded-xl text-xs font-extrabold transition">Specialty Programs</button>
+                </div>
+            </div>
+
+            <!-- Dynamic Programs Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="programs-container">
+                <!-- Program cards inserted via JS -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BEFORE & AFTER TRANSFORMATIONS SECTION -->
+    <section id="transformations" class="py-20 px-4 bg-slate-950/80 border-y border-gray-800">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-emerald-400 text-xs font-black tracking-widest uppercase">Proven Client Results</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white mt-1">Real Client Transformations</h2>
+                <p class="text-gray-400 text-sm mt-2">Interactive results inspector. Toggle between before and after photos achieved under Coach Marcus.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Interactive Image Toggle Box -->
+                <div class="lg:col-span-7 glass-card p-6 rounded-3xl border border-gray-700">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-brand-orange/20 text-brand-orange text-xs font-bold px-3 py-1 rounded-full border border-brand-orange/30 uppercase">12-WEEK SHRED PROTOCOL</span>
+                        <span class="text-xs text-gray-400"><i class="fa-solid fa-stopwatch text-brand-orange"></i> 90 Days Duration</span>
+                    </div>
+
+                    <div class="relative h-80 sm:h-[400px] rounded-2xl overflow-hidden bg-slate-900 border border-gray-800">
+                        <!-- Before Picture Layer -->
+                        <div id="trans-before-img" class="absolute inset-0 w-full h-full bg-cover bg-center transition-all duration-500" style="background-image: url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=800&auto=format&fit=crop');">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 z-10">
+                                <span class="bg-red-500 text-white text-xs font-black px-3 py-1 rounded uppercase tracking-wider">BEFORE (96 kg / 211 lbs)</span>
+                                <p class="text-xs text-gray-300 mt-2">High fat composition, low stamina, chronic lower back pain.</p>
+                            </div>
+                        </div>
+
+                        <!-- After Picture Layer -->
+                        <div id="trans-after-img" class="absolute inset-0 w-full h-full bg-cover bg-center transition-all duration-500 opacity-0 pointer-events-none" style="background-image: url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=800&auto=format&fit=crop');">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 z-10">
+                                <span class="bg-emerald-500 text-slate-950 text-xs font-black px-3 py-1 rounded uppercase tracking-wider">AFTER (80 kg / Lost 16 kg Fat)</span>
+                                <p class="text-xs text-gray-200 mt-2">Lean muscle hypertrophy, six-pack definition, high energy!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Toggle Control Buttons -->
+                    <div class="flex items-center justify-between mt-6">
+                        <div>
+                            <h4 class="font-bold text-white text-base">David Krasner, 34</h4>
+                            <p class="text-xs text-gray-400">Software Engineer & Busy Father</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="setTransformView('before')" id="btn-view-before" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-brand-orange text-white shadow">Show Before</button>
+                            <button onclick="setTransformView('after')" id="btn-view-after" class="px-5 py-2.5 rounded-xl text-xs font-bold glass-card text-gray-300">Show After</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transformation Testimonials List -->
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="glass-card p-5 rounded-2xl">
+                        <div class="flex items-center gap-1 text-amber-400 text-xs mb-2">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs sm:text-sm text-gray-200 italic">"Coach Marcus completely redesigned my lifestyle. I dropped 16 kg in 12 weeks while eating meals I actually enjoy."</p>
+                        <div class="flex justify-between items-center mt-3 pt-3 border-t border-gray-800">
+                            <span class="text-xs font-bold text-white">David K.</span>
+                            <span class="text-[10px] text-brand-orange font-bold uppercase">Weight Loss Program</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl">
+                        <div class="flex items-center gap-1 text-amber-400 text-xs mb-2">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs sm:text-sm text-gray-200 italic">"The online workout app and continuous WhatsApp feedback kept me accountable every single day. Worth every penny."</p>
+                        <div class="flex justify-between items-center mt-3 pt-3 border-t border-gray-800">
+                            <span class="text-xs font-bold text-white">Elena Rostova</span>
+                            <span class="text-[10px] text-emerald-400 font-bold uppercase">Online Coaching</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl">
+                        <div class="flex items-center gap-1 text-amber-400 text-xs mb-2">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs sm:text-sm text-gray-200 italic">"Gained 7 kg of solid lean muscle in 16 weeks! My bench press increased by 35 kg."</p>
+                        <div class="flex justify-between items-center mt-3 pt-3 border-t border-gray-800">
+                            <span class="text-xs font-bold text-white">Jason Wright</span>
+                            <span class="text-[10px] text-brand-orange font-bold uppercase">Hypertrophy Program</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- INTERACTIVE ONLINE CONSULTATION BOOKING SYSTEM -->
+    <section id="booking" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-10 space-y-2">
+                <span class="bg-brand-orange/10 text-brand-orange border border-brand-orange/30 text-xs font-bold px-3.5 py-1 rounded-full uppercase">Instant Online Booking</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white">Book Your 1-on-1 Consultation</h2>
+                <p class="text-gray-400 text-sm">Select your program, pick a time slot, and lock in your session with instant confirmation.</p>
+            </div>
+
+            <div class="glass-card p-6 sm:p-10 rounded-3xl border border-gray-700 relative">
+                
+                <!-- Stepper Progress Header -->
+                <div class="flex items-center justify-between mb-8 pb-6 border-b border-gray-800">
+                    <div class="flex items-center gap-2" id="step-ind-1">
+                        <span class="w-8 h-8 rounded-full bg-brand-orange text-white font-bold flex items-center justify-center text-xs">1</span>
+                        <span class="text-xs font-bold text-white hidden sm:inline">Program</span>
+                    </div>
+                    <div class="w-12 h-0.5 bg-gray-800"></div>
+                    <div class="flex items-center gap-2 opacity-40" id="step-ind-2">
+                        <span class="w-8 h-8 rounded-full bg-gray-800 text-gray-400 font-bold flex items-center justify-center text-xs">2</span>
+                        <span class="text-xs font-bold text-gray-400 hidden sm:inline">Date & Time</span>
+                    </div>
+                    <div class="w-12 h-0.5 bg-gray-800"></div>
+                    <div class="flex items-center gap-2 opacity-40" id="step-ind-3">
+                        <span class="w-8 h-8 rounded-full bg-gray-800 text-gray-400 font-bold flex items-center justify-center text-xs">3</span>
+                        <span class="text-xs font-bold text-gray-400 hidden sm:inline">Your Details</span>
+                    </div>
+                </div>
+
+                <!-- STEP 1: Select Training Program -->
+                <div id="booking-step-1" class="space-y-4">
+                    <h3 class="text-base font-bold text-white">Step 1: What is your primary fitness goal?</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <label class="glass-card p-4 rounded-xl cursor-pointer flex items-center gap-3 border border-gray-800 hover:border-brand-orange transition">
+                            <input type="radio" name="booking-program-radio" value="Weight Loss Blitz" checked class="accent-brand-orange">
+                            <div>
+                                <p class="font-bold text-white text-xs sm:text-sm">Weight Loss Blitz</p>
+                                <p class="text-[10px] text-gray-400">Burn body fat & tone muscles</p>
+                            </div>
+                        </label>
+                        <label class="glass-card p-4 rounded-xl cursor-pointer flex items-center gap-3 border border-gray-800 hover:border-brand-orange transition">
+                            <input type="radio" name="booking-program-radio" value="Muscle Hypertrophy" class="accent-brand-orange">
+                            <div>
+                                <p class="font-bold text-white text-xs sm:text-sm">Muscle Hypertrophy</p>
+                                <p class="text-[10px] text-gray-400">Build size & overall strength</p>
+                            </div>
+                        </label>
+                        <label class="glass-card p-4 rounded-xl cursor-pointer flex items-center gap-3 border border-gray-800 hover:border-brand-orange transition">
+                            <input type="radio" name="booking-program-radio" value="1-on-1 In-Gym Coaching" class="accent-brand-orange">
+                            <div>
+                                <p class="font-bold text-white text-xs sm:text-sm">1-on-1 In-Gym Personal Training</p>
+                                <p class="text-[10px] text-gray-400">Direct personal supervision</p>
+                            </div>
+                        </label>
+                        <label class="glass-card p-4 rounded-xl cursor-pointer flex items-center gap-3 border border-gray-800 hover:border-brand-orange transition">
+                            <input type="radio" name="booking-program-radio" value="Online Virtual Coaching" class="accent-brand-orange">
+                            <div>
+                                <p class="font-bold text-white text-xs sm:text-sm">Online Virtual Coaching</p>
+                                <p class="text-[10px] text-gray-400">Train remotely from anywhere</p>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="text-right pt-4">
+                        <button onclick="goToBookingStep(2)" class="btn-orange text-xs font-extrabold px-6 py-3.5 rounded-xl inline-flex items-center gap-2">
+                            <span>Select Date & Slot</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STEP 2: Pick Date & Time Slot -->
+                <div id="booking-step-2" class="hidden space-y-4">
+                    <h3 class="text-base font-bold text-white">Step 2: Pick your preferred consultation time</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 mb-2">Select Preferred Date</label>
+                            <input type="date" id="booking-date" class="w-full bg-slate-900 border border-gray-800 text-white p-3 rounded-xl focus:border-brand-orange focus:outline-none text-xs">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 mb-2">Available Time Slots</label>
+                            <div class="grid grid-cols-2 gap-2" id="slot-buttons">
+                                <button type="button" onclick="selectTimeSlot(this)" class="time-slot-btn glass-card p-2.5 text-xs text-center rounded-xl border border-gray-800 hover:border-brand-orange text-gray-200">09:00 AM - 09:30 AM</button>
+                                <button type="button" onclick="selectTimeSlot(this)" class="time-slot-btn glass-card p-2.5 text-xs text-center rounded-xl border border-gray-800 hover:border-brand-orange text-gray-200">11:30 AM - 12:00 PM</button>
+                                <button type="button" onclick="selectTimeSlot(this)" class="time-slot-btn glass-card p-2.5 text-xs text-center rounded-xl border border-gray-800 hover:border-brand-orange text-gray-200">04:00 PM - 04:30 PM</button>
+                                <button type="button" onclick="selectTimeSlot(this)" class="time-slot-btn glass-card p-2.5 text-xs text-center rounded-xl border border-gray-800 hover:border-brand-orange text-gray-200">06:30 PM - 07:00 PM</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center pt-4">
+                        <button onclick="goToBookingStep(1)" class="text-gray-400 hover:text-white text-xs font-bold"><i class="fa-solid fa-arrow-left mr-1"></i> Back</button>
+                        <button onclick="goToBookingStep(3)" class="btn-orange text-xs font-extrabold px-6 py-3.5 rounded-xl inline-flex items-center gap-2">
+                            <span>Enter Personal Details</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STEP 3: Client Details Form -->
+                <div id="booking-step-3" class="hidden space-y-4">
+                    <h3 class="text-base font-bold text-white">Step 3: Client Contact Information</h3>
+                    <form onsubmit="handleBookingSubmission(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-300 mb-1">Full Name *</label>
+                                <input type="text" id="client-name" required placeholder="John Doe" class="w-full bg-slate-900 border border-gray-800 text-white p-3 rounded-xl focus:border-brand-orange focus:outline-none text-xs">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-300 mb-1">Phone / WhatsApp Number *</label>
+                                <input type="tel" id="client-phone" required placeholder="+1 (555) 019-2834" class="w-full bg-slate-900 border border-gray-800 text-white p-3 rounded-xl focus:border-brand-orange focus:outline-none text-xs">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-300 mb-1">Email Address</label>
+                                <input type="email" id="client-email" placeholder="john@example.com" class="w-full bg-slate-900 border border-gray-800 text-white p-3 rounded-xl focus:border-brand-orange focus:outline-none text-xs">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-300 mb-1">Current Fitness Level</label>
+                                <select id="client-level" class="w-full bg-slate-900 border border-gray-800 text-white p-3 rounded-xl focus:border-brand-orange focus:outline-none text-xs">
+                                    <option>Beginner (Little or no gym experience)</option>
+                                    <option>Intermediate (Consistent for 6+ months)</option>
+                                    <option>Advanced Athlete</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center pt-4">
+                            <button type="button" onclick="goToBookingStep(2)" class="text-gray-400 hover:text-white text-xs font-bold"><i class="fa-solid fa-arrow-left mr-1"></i> Back</button>
+                            <button type="submit" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs px-8 py-3.5 rounded-xl shadow-lg flex items-center gap-2">
+                                <i class="fa-solid fa-check-circle"></i> Confirm & Book Consultation
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- CONFIRMATION SCREEN WITH SIMULATED WHATSAPP NOTIFICATION -->
+                <div id="booking-confirmation" class="hidden text-center py-6 space-y-6">
+                    <div class="w-16 h-16 bg-emerald-500/20 border border-emerald-500 text-emerald-400 rounded-full flex items-center justify-center mx-auto text-3xl">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-white">Consultation Booked Successfully!</h3>
+                    <p class="text-gray-300 text-xs sm:text-sm max-w-md mx-auto">Your appointment has been registered with Coach Marcus Apex. An automated confirmation message has been triggered.</p>
+
+                    <!-- Simulated WhatsApp Message Card -->
+                    <div class="max-w-md mx-auto bg-slate-900 border border-gray-800 rounded-2xl p-4 text-left shadow-xl">
+                        <div class="flex items-center gap-2 pb-2.5 mb-2 border-b border-gray-800">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+                            <span class="text-xs font-bold text-white">Automated Client Confirmation Alert</span>
+                        </div>
+                        <div id="whatsapp-sim-body" class="text-xs text-gray-300 space-y-1 bg-emerald-950/30 p-3 rounded-xl border border-emerald-500/20 font-mono">
+                            <!-- Populated dynamically via Javascript -->
+                        </div>
+                    </div>
+
+                    <button onclick="resetBookingForm()" class="text-brand-orange hover:underline text-xs font-bold">Book Another Session</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS & TESTIMONIALS SECTION -->
+    <section id="testimonials" class="py-20 px-4 bg-slate-950/60 border-t border-gray-800/80">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brand-orange text-xs font-black tracking-widest uppercase">Community Feedback</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white mt-1">Client Testimonials</h2>
+                <p class="text-gray-400 text-sm mt-2">Hear directly from busy professionals, athletes, and fitness enthusiasts.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="glass-card p-6 rounded-3xl space-y-4">
+                    <div class="flex items-center gap-1 text-amber-400 text-xs">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm text-gray-300 leading-relaxed italic">"Marcus made gym training non-intimidating for me as a beginner. His technical cues corrected my squat form completely."</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Client" class="w-10 h-10 rounded-full object-cover border border-brand-orange">
+                        <div>
+                            <p class="text-xs font-bold text-white">Samantha Miller</p>
+                            <p class="text-[10px] text-gray-400">Lost 12 kg in 4 Months</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl space-y-4">
+                    <div class="flex items-center gap-1 text-amber-400 text-xs">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm text-gray-300 leading-relaxed italic">"The corporate wellness program Coach Marcus hosted for our engineering firm increased overall staff energy levels noticeably!"</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" alt="Client" class="w-10 h-10 rounded-full object-cover border border-brand-orange">
+                        <div>
+                            <p class="text-xs font-bold text-white">Robert Vance</p>
+                            <p class="text-[10px] text-gray-400">VP of Engineering</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl space-y-4">
+                    <div class="flex items-center gap-1 text-amber-400 text-xs">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm text-gray-300 leading-relaxed italic">"Online coaching was seamless. Macro targets were updated weekly depending on my weight logs. Highest level of detail!"</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop" alt="Client" class="w-10 h-10 rounded-full object-cover border border-brand-orange">
+                        <div>
+                            <p class="text-xs font-bold text-white">Kevin Zhang</p>
+                            <p class="text-[10px] text-gray-400">Online Coaching Client</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & LOCATION FOOTER -->
+    <section id="contact" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            <!-- Direct Quick Connects & Map -->
+            <div class="lg:col-span-5 space-y-6">
+                <div>
+                    <span class="text-brand-orange text-xs font-black tracking-widest uppercase">Get In Touch Directly</span>
+                    <h2 class="text-3xl font-black text-white mt-1">Gym Location & Quick Contacts</h2>
+                    <p class="text-gray-400 text-sm mt-2">Have a quick query? Reach out on WhatsApp or drop by our training facility.</p>
+                </div>
+
+                <div class="space-y-3">
+                    <a href="https://wa.me/?text=Hi%20Coach%20Marcus" target="_blank" class="glass-card p-4 rounded-2xl flex items-center gap-4 hover:border-emerald-500 transition">
+                        <div class="w-11 h-11 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400">Instant WhatsApp Chat</p>
+                            <p class="text-sm font-bold text-white">+1 (800) 555-APEX-FIT</p>
+                        </div>
+                    </a>
+
+                    <a href="tel:+18005550199" class="glass-card p-4 rounded-2xl flex items-center gap-4 hover:border-brand-orange transition">
+                        <div class="w-11 h-11 rounded-xl bg-brand-orange/20 text-brand-orange flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400">Direct Phone Support</p>
+                            <p class="text-sm font-bold text-white">+1 (800) 555-0199</p>
+                        </div>
+                    </a>
+
+                    <div class="glass-card p-4 rounded-2xl flex items-center gap-4">
+                        <div class="w-11 h-11 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400">Gym Training Location</p>
+                            <p class="text-sm font-bold text-white">Apex Fitness HQ, Suite 402, Metro Plaza</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lead Capture Contact Form -->
+            <div class="lg:col-span-7 glass-card p-6 sm:p-8 rounded-3xl border border-gray-700">
+                <h3 class="text-xl font-bold text-white mb-1">Send Coach Marcus A Quick Message</h3>
+                <p class="text-xs text-gray-400 mb-6">Fill out this quick enquiry form and Coach Marcus will reply within 2 hours.</p>
+
+                <form onsubmit="handleGeneralEnquiry(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 mb-1">Your Name</label>
+                            <input type="text" required placeholder="Alex Smith" class="w-full bg-slate-900 border border-gray-800 text-white p-3 rounded-xl focus:border-brand-orange focus:outline-none text-xs">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 mb-1">Phone / WhatsApp</label>
+                            <input type="tel" required placeholder="+1 (555) 000-0000" class="w-full bg-slate-900 border border-gray-800 text-white p-3 rounded-xl focus:border-brand-orange focus:outline-none text-xs">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 mb-1">How Can Coach Marcus Help You?</label>
+                        <textarea rows="3" required placeholder="Tell us about your fitness goal, target timeline, or questions..." class="w-full bg-slate-900 border border-gray-800 text-white p-3 rounded-xl focus:border-brand-orange focus:outline-none text-xs"></textarea>
+                    </div>
+                    <button type="submit" class="btn-orange text-xs font-extrabold w-full py-3.5 rounded-xl transition shadow-lg">
+                        Send Enquiry Now
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER WITH BRANDING BY ARENA ITSOFT -->
+    <footer class="bg-slate-950 border-t border-gray-800/80 py-10 px-4 text-xs text-gray-400">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+            <div>
+                <span class="font-black text-lg text-white tracking-wider">MARCUS<span class="text-brand-orange">APEX</span></span>
+                <p class="text-xs text-gray-500 mt-1">© 2026 Marcus Apex Fitness. All Rights Reserved.</p>
+            </div>
+
+            <div class="flex items-center gap-3 bg-slate-900 px-4 py-2.5 rounded-2xl border border-gray-800">
+                <i class="fa-solid fa-code text-brand-orange"></i>
+                <span>Designed & Developed by</span>
+                <span class="font-black text-white hover:text-brand-orange cursor-pointer">Arena ITsoft</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP QUICK CAPTURE BUTTON -->
+    <a href="https://wa.me/?text=Hi%20Coach%20Marcus,%20I%20want%20to%20book%20a%20free%20consultation." target="_blank" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full btn-whatsapp flex items-center justify-center text-2xl shadow-2xl hover:scale-110 transition" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- INTERACTIVE JAVASCRIPT CODE -->
+    <script>
+        // Programs Dataset
+        const programsList = [
+            {
+                id: 1,
+                title: 'Weight Loss Blitz',
+                category: 'specialty',
+                duration: '12 Weeks',
+                intensity: 'High Intensity',
+                desc: 'Rapid fat-loss program combining metabolic resistance circuits with a calculated macronutrient meal guide.',
+                price: '$299'
+            },
+            {
+                id: 2,
+                title: 'Muscle Hypertrophy & Growth',
+                category: 'specialty',
+                duration: '16 Weeks',
+                intensity: 'Moderate-Heavy',
+                desc: 'Hypertrophy-focused resistance workouts engineered to maximize muscle mass and compound strength.',
+                price: '$399'
+            },
+            {
+                id: 3,
+                title: '1-on-1 In-Gym Personal Training',
+                category: 'in-person',
+                duration: 'Monthly / 12 Sessions',
+                intensity: 'Custom Tailored',
+                desc: 'Direct hands-on gym coaching, lifting form analysis, spotting on heavy sets, and weekly body composition scans.',
+                price: '$499'
+            },
+            {
+                id: 4,
+                title: '1-on-1 Online Virtual Coaching',
+                category: 'online',
+                duration: 'Monthly Sub',
+                intensity: 'Flexible Remote',
+                desc: 'Custom exercise routine video guides, weekly Zoom posture check-ins, and daily WhatsApp macro tracking.',
+                price: '$199'
+            },
+            {
+                id: 5,
+                title: 'Strength & Conditioning',
+                category: 'specialty',
+                duration: '8 Weeks',
+                intensity: 'Extreme',
+                desc: 'Designed for athletes looking to improve deadlift, squat, explosion, agility, and cardiovascular conditioning.',
+                price: '$249'
+            },
+            {
+                id: 6,
+                title: 'Corporate Fitness & Team Wellness',
+                category: 'in-person',
+                duration: 'Custom Contract',
+                intensity: 'All Fitness Levels',
+                desc: 'On-site or virtual group fitness workshops and health challenges designed to boost employee team morale.',
+                price: 'Custom'
+            }
+        ];
+
+        // Selected Time Slot Holder
+        let currentSlot = '09:00 AM - 09:30 AM';
+
+        // Page On Load
+        window.onload = function() {
+            renderProgramsCards('all');
+            
+            // Set default booking date to tomorrow
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            document.getElementById('booking-date').value = tomorrow.toISOString().split('T')[0];
+        };
+
+        // Render Programs
+        function renderProgramsCards(filter) {
+            const container = document.getElementById('programs-container');
+            container.innerHTML = '';
+
+            const filtered = filter === 'all' ? programsList : programsList.filter(p => p.category === filter);
+
+            filtered.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'glass-card p-6 rounded-3xl flex flex-col justify-between space-y-4';
+                card.innerHTML = `
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="bg-brand-orange/20 text-brand-orange text-[10px] font-extrabold px-2.5 py-1 rounded-md uppercase border border-brand-orange/30">${p.duration}</span>
+                            <span class="text-xs text-gray-400"><i class="fa-solid fa-gauge-high text-brand-orange"></i> ${p.intensity}</span>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-white">${p.title}</h3>
+                        <p class="text-xs text-gray-400 mt-2 leading-relaxed">${p.desc}</p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-800 flex items-center justify-between">
+                        <div>
+                            <span class="text-xl font-black text-white">${p.price}</span>
+                        </div>
+                        <button onclick="openBookingModalWithProgram('${p.title}')" class="btn-orange text-xs font-bold px-4 py-2.5 rounded-xl">
+                            Enquire Now
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function filterPrograms(category, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => {
+                b.classList.remove('bg-brand-orange', 'text-white');
+                b.classList.add('glass-card', 'text-gray-300');
+            });
+            btn.classList.add('bg-brand-orange', 'text-white');
+            btn.classList.remove('glass-card', 'text-gray-300');
+            renderProgramsCards(category);
+        }
+
+        // TRANSFORMATION TOGGLE LOGIC
+        function setTransformView(view) {
+            const beforeImg = document.getElementById('trans-before-img');
+            const afterImg = document.getElementById('trans-after-img');
+            const btnBefore = document.getElementById('btn-view-before');
+            const btnAfter = document.getElementById('btn-view-after');
+
+            if (view === 'after') {
+                afterImg.classList.remove('opacity-0', 'pointer-events-none');
+                beforeImg.classList.add('opacity-0', 'pointer-events-none');
+                btnAfter.className = 'px-5 py-2.5 rounded-xl text-xs font-bold bg-emerald-500 text-slate-950 shadow';
+                btnBefore.className = 'px-5 py-2.5 rounded-xl text-xs font-bold glass-card text-gray-300';
+            } else {
+                beforeImg.classList.remove('opacity-0', 'pointer-events-none');
+                afterImg.classList.add('opacity-0', 'pointer-events-none');
+                btnBefore.className = 'px-5 py-2.5 rounded-xl text-xs font-bold bg-brand-orange text-white shadow';
+                btnAfter.className = 'px-5 py-2.5 rounded-xl text-xs font-bold glass-card text-gray-300';
+            }
+        }
+
+        // BOOKING STEPPER FUNCTIONS
+        function goToBookingStep(step) {
+            document.getElementById('booking-step-1').classList.add('hidden');
+            document.getElementById('booking-step-2').classList.add('hidden');
+            document.getElementById('booking-step-3').classList.add('hidden');
+
+            document.getElementById(`booking-step-${step}`).classList.remove('hidden');
+
+            for (let i = 1; i <= 3; i++) {
+                const ind = document.getElementById(`step-ind-${i}`);
+                if (i <= step) {
+                    ind.classList.remove('opacity-40');
+                } else {
+                    ind.classList.add('opacity-40');
+                }
+            }
+        }
+
+        function selectTimeSlot(btn) {
+            document.querySelectorAll('.time-slot-btn').forEach(b => {
+                b.classList.remove('border-brand-orange', 'bg-orange-500/20', 'text-brand-orange');
+            });
+            btn.classList.add('border-brand-orange', 'bg-orange-500/20', 'text-brand-orange');
+            currentSlot = btn.innerText;
+        }
+
+        function handleBookingSubmission(e) {
+            e.preventDefault();
+            const name = document.getElementById('client-name').value;
+            const phone = document.getElementById('client-phone').value;
+            const date = document.getElementById('booking-date').value;
+
+            document.getElementById('booking-step-3').classList.add('hidden');
+            document.getElementById('booking-confirmation').classList.remove('hidden');
+
+            const simBody = document.getElementById('whatsapp-sim-body');
+            simBody.innerHTML = `
+                <p><strong>To Client:</strong> ${phone} (${name})</p>
+                <p><strong>Hi ${name}!</strong> Your consultation request with Coach Marcus Apex is confirmed for <strong>${date} at ${currentSlot}</strong>.</p>
+                <p class="text-[10px] text-gray-400 pt-1">Location: Apex Gym HQ / Zoom Virtual Room</p>
+            `;
+        }
+
+        function resetBookingForm() {
+            document.getElementById('booking-confirmation').classList.add('hidden');
+            goToBookingStep(1);
+        }
+
+        function openBookingModal() {
+            document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function openBookingModalWithProgram(programName) {
+            openBookingModal();
+        }
+
+        function handleGeneralEnquiry(e) {
+            e.preventDefault();
+            alert("Thank you! Your message has been dispatched to Coach Marcus Apex.");
+        }
+
+        function toggleMobileNav() {
+            const nav = document.getElementById('mobile-nav');
+            nav.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
